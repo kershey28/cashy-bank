@@ -1,0 +1,24 @@
+@use 'breakpoints';
+
+$icon-scale: (
+  'regular': 5rem,
+  'small': 3rem,
+);
+
+:root {
+  @each $size, $value in $icon-scale {
+    @if $size == 'regular' {
+      --icon-size: #{$value};
+    } @else {
+      @include breakpoints.respond(phone-reg) {
+        --icon-size: #{$value};
+      }
+    }
+  }
+}
+
+.icon {
+  height: var(--icon-size);
+  width: var(--icon-size);
+  fill: var(--clr-secondary-300);
+}

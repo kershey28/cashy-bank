@@ -1,0 +1,17 @@
+@use '../abstracts/breakpoints';
+@use '../utilities/flow';
+
+.home {
+  overflow: hidden;
+  height: 100vh;
+
+  //borders
+  border-right: 1px solid var(--clr-primary-100);
+  border-bottom: 1px solid var(--clr-primary-100);
+  border-radius: 20px;
+
+  @include breakpoints.respond(phone-reg) {
+    border: none;
+    border-radius: 0;
+  }
+}

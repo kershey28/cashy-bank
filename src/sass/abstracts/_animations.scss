@@ -1,0 +1,249 @@
+@use '../abstracts/variables';
+
+// move
+@keyframes moveInLeft-card {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem) rotate(25deg);
+  }
+
+  80% {
+    transform: translateX(1rem) rotate(25deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0) rotate(25deg);
+  }
+}
+
+@keyframes moveInRight-card {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem) rotate(-15deg);
+  }
+
+  80% {
+    transform: translateX(-1rem) rotate(-15deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0) rotate(-15deg);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+// //pulsate
+@keyframes pulsate--black {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: variables.$shadow-black-dark;
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+//transition
+@keyframes app-transition-in {
+  0% {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  50% {
+    height: var(--app-height);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    height: var(--app-height);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes appCon-transition-in {
+  0% {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  50% {
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes hero-transition-out {
+  0% {
+    height: 100vh;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// SVG Login Button
+@keyframes btn-login {
+  0% {
+    width: 150px;
+  }
+  6% {
+    width: 60px;
+  }
+  71% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  77% {
+    transform: scale(1);
+  }
+
+  94% {
+    width: 60px;
+  }
+  100% {
+    width: 150px;
+  }
+}
+
+@keyframes btn-login__text {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  6% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  94% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes btn-login__ok {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  77% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  92% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  96% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+//popups
+@keyframes display-popup {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  10% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes display-guide {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+//fade
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes close-popup {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+}

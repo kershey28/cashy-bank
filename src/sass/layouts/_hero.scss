@@ -1,0 +1,60 @@
+@use '../abstracts/breakpoints';
+@use '../utilities/flow';
+
+.hero {
+  //position
+  position: relative;
+  height: 100vh;
+
+  //TEST
+  // display: none;
+
+  &__text-box {
+    position: relative;
+    bottom: 15%;
+    left: 3rem;
+    width: 60%;
+
+    @include breakpoints.respond(phone-reg) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      left: auto;
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    margin-bottom: flow.$margin-md;
+
+    @include breakpoints.respond(phone-mini) {
+      margin-bottom: flow.$margin-hg;
+    }
+  }
+
+  &__heading {
+    @include breakpoints.respond(phone-reg) {
+      margin-bottom: flow.$margin-hg;
+    }
+    @include breakpoints.respond(phone-mini) {
+      display: none;
+    }
+  }
+
+  //children-2
+  &__login {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__cards {
+    position: absolute;
+    bottom: 40%;
+    right: 10%;
+
+    @include breakpoints.respond(tab-port) {
+      display: none;
+    }
+  }
+}

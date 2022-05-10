@@ -1,0 +1,48 @@
+@use '../abstracts/mixins';
+
+// main Container
+body,
+.container-main {
+  background-image: linear-gradient(
+    to top right,
+    var(--clr-primary-400),
+    var(--clr-primary-400),
+    var(--clr-primary-300)
+  );
+}
+
+// children
+.home {
+  background-image: linear-gradient(
+    to top right,
+    var(--clr-primary-400),
+    var(--clr-primary-300),
+    var(--clr-primary-200),
+    var(--clr-secondary-opacity-200),
+    var(--clr-secondary-100)
+  );
+}
+
+// children of APP
+.movements,
+.operation {
+  @include mixins.glass-gradient;
+}
+
+.popup {
+  background-image: linear-gradient(
+    to top right,
+    var(--clr-secondary-400),
+    var(--clr-secondary-300),
+    var(--clr-secondary-200)
+  );
+}
+
+.guide {
+  background-image: linear-gradient(
+    to top right,
+    var(--clr-primary-400),
+    var(--clr-primary-300),
+    var(--clr-primary-200)
+  );
+}

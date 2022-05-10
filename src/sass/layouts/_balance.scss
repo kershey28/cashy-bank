@@ -1,0 +1,15 @@
+@use '../utilities/flow';
+
+.balance {
+  //children-1
+  &__text-box {
+    margin-bottom: flow.$margin-sm;
+  }
+  &__label {
+    margin-bottom: flow.$margin-sm;
+  }
+
+  &__date {
+    opacity: 0.5;
+  }
+}

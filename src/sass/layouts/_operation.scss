@@ -1,0 +1,27 @@
+@use '../utilities/flow';
+@use '../abstracts/breakpoints';
+
+.operation {
+  border-radius: 1rem;
+  padding: 3rem 4rem;
+  min-width: 32rem;
+  text-align: center;
+  position: relative;
+
+  @include breakpoints.respond(tab-port) {
+    min-width: 0;
+    width: 100%;
+  }
+
+  //children-1
+  &__type {
+    margin-bottom: flow.$margin-sm;
+    font-weight: 500;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

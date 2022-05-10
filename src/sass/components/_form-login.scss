@@ -1,0 +1,109 @@
+@use '../abstracts/variables';
+@use '../utilities/flow';
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
+
+.form-login {
+  //sizing
+  width: 50rem;
+  height: 40rem;
+
+  //styling
+  background-image: linear-gradient(
+    to bottom left,
+    var(--clr-primary-300),
+    var(--clr-primary-400)
+  );
+  border-top-right-radius: 20px;
+
+  //alignment
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include breakpoints.respond(phone-reg) {
+    width: 100%;
+    background-image: none;
+    background-color: transparent;
+  }
+
+  //children-1
+  &__heading {
+    //position
+    position: absolute;
+    display: inline-block;
+    top: -3.5rem;
+    left: 9.5rem;
+
+    //styling
+    @include mixins.glass-gradient;
+
+    //others
+    padding: 1.5rem 3rem;
+    font-size: var(--fs-body);
+
+    @include breakpoints.respond(phone-reg) {
+      position: relative;
+      bottom: 3rem;
+      left: auto;
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  &__input {
+    //typography
+    font-size: 1.5rem;
+    font-family: inherit;
+
+    //styling
+    border-radius: 2px;
+    background-color: var(--clr-white-opacity-200);
+    border: none;
+    border-bottom: 3px solid transparent;
+
+    //others
+    width: 100%;
+    padding: 1.5rem 2rem;
+    transition: all 0.3s;
+
+    &:focus {
+      box-shadow: variables.$shadow-black-light;
+      outline: none;
+      border-bottom: 3px solid var(--clr-secondary-300);
+
+      &:invalid {
+        border-bottom: 3px solid var(--clr-accent-300);
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      color: var(--clr-neutral-300);
+    }
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__label {
+    // typography
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--clr-neutral-200);
+
+    //alignment
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+
+    //others
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &__btn {
+    margin-block: flow.$margin-sm;
+  }
+}

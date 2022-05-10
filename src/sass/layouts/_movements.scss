@@ -1,0 +1,95 @@
+@use '../abstracts/breakpoints';
+
+.movements {
+  overflow: scroll;
+  position: relative;
+
+  min-width: 45rem;
+  height: 750px;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--clr-white-opacity-100);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  @include breakpoints.respond(tab-port) {
+    max-height: 600px;
+  }
+
+  @include breakpoints.respond(phone-reg) {
+    min-width: 0;
+  }
+
+  //420px
+  @media only screen and (max-width: 26.25em) {
+    overflow-x: hidden;
+  }
+
+  //children
+  &__row {
+    padding: 2.25rem 4rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--clr-white-opacity-100);
+
+    //420px
+    @media only screen and (max-width: 26.25em) {
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 2.25rem 3rem;
+    }
+  }
+
+  &__box {
+    display: flex;
+    gap: 2rem;
+
+    @include breakpoints.respond(phone-reg) {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  &__type {
+    padding: 0.1rem 1rem;
+    border-radius: 10rem;
+
+    //typography
+    text-transform: uppercase;
+    font-weight: 500;
+
+    &--deposit {
+      background-color: var(--clr-secondary-300);
+    }
+    &--withdrawal {
+      background-color: var(--clr-neutral-700);
+    }
+  }
+
+  &__date {
+    //typography
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.4;
+  }
+
+  &__value {
+    margin-left: auto;
+
+    //420px
+    @media only screen and (max-width: 26.25em) {
+      margin-left: 0;
+    }
+  }
+}

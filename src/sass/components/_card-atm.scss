@@ -1,0 +1,48 @@
+@use '../abstracts/variables';
+
+.card-atm {
+  border-radius: 20px;
+  width: 33rem;
+  height: 18rem;
+  position: relative;
+  box-shadow: variables.$shadow-black-light;
+  transition: all 1s;
+
+  &__text-box {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    opacity: 0.4;
+  }
+
+  &--1 {
+    //position
+    position: relative;
+    z-index: 1;
+
+    //styling
+    background-image: linear-gradient(
+      to left bottom,
+      var(--clr-accent-300),
+      var(--clr-accent-300),
+      var(--clr-accent-opacity-200),
+      var(--clr-accent-opacity-100)
+    );
+    border-right: 1px solid var(--clr-accent-opacity-100);
+    border-bottom: 1px solid var(--clr-accent-opacity-100);
+    transform: rotate(25deg);
+  }
+
+  &--2 {
+    background-image: linear-gradient(
+      to left bottom,
+      var(--clr-secondary-300),
+      var(--clr-secondary-300),
+      var(--clr-secondary-opacity-200),
+      var(--clr-secondary-opacity-100)
+    );
+    border-right: 1px solid var(--clr-secondary-opacity-100);
+    border-bottom: 1px solid var(--clr-secondary-opacity-100);
+    transform: rotate(-15deg);
+  }
+}

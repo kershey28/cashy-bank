@@ -1,0 +1,51 @@
+@use '../abstracts/breakpoints';
+
+////////// Variables ////////////
+
+// switching app height
+$app-height: (
+  'regular': 100vh,
+  'tab': 100%,
+);
+
+:root {
+  @each $size, $value in $app-height {
+    @if $size == 'regular' {
+      --app-height: #{$value};
+    } @else {
+      @include breakpoints.respond(tab-port) {
+        --app-height: #{$value};
+      }
+    }
+  }
+}
+
+////////// Classes ////////////
+
+//transitions
+.app-transition-in {
+  animation: app-transition-in 1s forwards ease-out;
+}
+.appCon-transition-in {
+  animation: appCon-transition-in 1s forwards ease-out;
+}
+
+.hero-transition-out {
+  animation: hero-transition-out 0.5s forwards ease-out;
+}
+
+//errors
+.error {
+  opacity: 0;
+  visibility: hidden;
+  color: var(--clr-accent-300);
+}
+
+.display-error {
+  animation: display-popup 3s ease-out;
+}
+
+//popup
+.display-popup {
+  animation: display-popup 5s ease-out;
+}

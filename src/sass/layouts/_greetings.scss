@@ -1,0 +1,10 @@
+.greetings {
+  &__text {
+    text-transform: capitalize;
+    opacity: 0.5;
+  }
+
+  &__username {
+    font-weight: 500;
+  }
+}

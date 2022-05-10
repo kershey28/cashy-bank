@@ -1,0 +1,9 @@
+.misc {
+  padding: 0 0.3rem;
+  margin-top: 1.9rem;
+
+  //children-2
+  &__btn-logout {
+    font-size: var(--fs-body);
+  }
+}

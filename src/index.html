@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Cashy</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/img/pig.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="js/index.js"></script>
+  </head>
+
+  <body>
+    <div class="container-main">
+      <!--Main Container-->
+
+      <!--Home-->
+      <div class="home" id="home">
+        <!--Hero-->
+        <header class="hero hero-animation" id="hero">
+
+          <div class="hero__text-box">
+            <div class="logo hero__logo">
+              <p class="logo__heading">Cashy</p>
+              <img class="logo__pig" src="assets/img/pig.png">
+            </div>
+            <h1 class="heading-display hero__heading">
+              Your better banking 
+              <span class="gradient--secondary-regular"> connection</span>
+            </h1>
+          </div>
+
+          <div class="hero__cards">
+            <div class="card-atm card-atm--1">
+              <div class="card-atm__text-box">
+                <h3 class="heading-3 card-atm__number">**** 5678</h3>
+                <p class="caption card-atm__date">6/22</p>
+              </div>
+            </div>
+            <div class="card-atm card-atm--2">
+              <div class="card-atm__text-box">
+                <h3 class="heading-3 card-atm__number">**** 5678</h3>
+                <p class="caption card-atm__date">4/22</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Form-->
+          <form class="hero__login form-login">
+            <h3 class="form-login__heading heading-3">Login to get started</h3>
+
+            <div class="form-login__group--1">
+              <input
+                type="text"
+                class="form-login__input login__input login__input--user"
+                placeholder="username"
+                id="username"
+                required
+              />
+              <label for="username" class="form-login__label">Username</label>
+            </div>
+
+            <div class="form-login__group">
+              <input
+                type="password"
+                class="form-login__input login__input login__input--pin"
+                placeholder="PIN"
+                maxlength="4"
+                id="pin"
+                required
+              />
+              <label for="pin" class="form-login__label">PIN</label>
+            </div>
+
+            <!-- <button class="btn-cta--accent form-login__btn login__btn">
+              Login &rarr;
+            </button> -->
+
+            <!--Login Button SVG-->
+            <button class="btn-login form-login__btn login__btn">
+              <span class="btn-login__text">Login &rarr;</span>
+              <svg
+                class="btn-login__fingerprint btn-login__fingerprint-base"
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+              >
+                <g
+                  class="btn-login__fingerprint-out"
+                  fill="none"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path
+                    class="btn-login__odd"
+                    d="m 25.117139,57.142857 c 0,0 -1.968558,-7.660465 -0.643619,-13.149003 1.324939,-5.488538 4.659682,-8.994751 4.659682,-8.994751"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 31.925369,31.477584 c 0,0 2.153609,-2.934998 9.074971,-5.105078 6.921362,-2.17008 11.799844,-0.618718 11.799844,-0.618718"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 57.131213,26.814448 c 0,0 5.127709,1.731228 9.899495,7.513009 4.771786,5.781781 4.772971,12.109204 4.772971,12.109204"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 72.334009,50.76769 0.09597,2.298098 -0.09597,2.386485"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 27.849282,62.75 c 0,0 1.286086,-1.279223 1.25,-4.25 -0.03609,-2.970777 -1.606117,-7.675266 -0.625,-12.75 0.981117,-5.074734 4.5,-9.5 4.5,-9.5"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 36.224282,33.625 c 0,0 8.821171,-7.174484 19.3125,-2.8125 10.491329,4.361984 11.870558,14.952665 11.870558,14.952665"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 68.349282,49.75 c 0,0 0.500124,3.82939 0.5625,5.8125 0.06238,1.98311 -0.1875,5.9375 -0.1875,5.9375"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 31.099282,65.625 c 0,0 1.764703,-4.224042 2,-7.375 0.235297,-3.150958 -1.943873,-9.276886 0.426777,-15.441942 2.370649,-6.165056 8.073223,-7.933058 8.073223,-7.933058"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 45.849282,33.625 c 0,0 12.805566,-1.968622 17,9.9375 4.194434,11.906122 1.125,24.0625 1.125,24.0625"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 59.099282,70.25 c 0,0 0.870577,-2.956221 1.1875,-4.5625 0.316923,-1.606279 0.5625,-5.0625 0.5625,-5.0625"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 60.901059,56.286612 c 0,0 0.903689,-9.415996 -3.801777,-14.849112 -3.03125,-3.5 -7.329245,-4.723939 -11.867187,-3.8125 -5.523438,1.109375 -7.570313,5.75 -7.570313,5.75"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 34.072577,68.846248 c 0,0 2.274231,-4.165782 2.839205,-9.033748 0.443558,-3.821814 -0.49394,-5.649939 -0.714206,-8.05386 -0.220265,-2.403922 0.21421,-4.63364 0.21421,-4.63364"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 37.774165,70.831845 c 0,0 2.692139,-6.147592 3.223034,-11.251208 0.530895,-5.103616 -2.18372,-7.95562 -0.153491,-13.647655 2.030229,-5.692035 8.108442,-4.538898 8.108442,-4.538898"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 54.391174,71.715729 c 0,0 2.359472,-5.427681 2.519068,-16.175068 0.159595,-10.747388 -4.375223,-12.993087 -4.375223,-12.993087"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 49.474282,73.625 c 0,0 3.730297,-8.451831 3.577665,-16.493718 -0.152632,-8.041887 -0.364805,-11.869326 -4.765165,-11.756282 -4.400364,0.113044 -3.875,4.875 -3.875,4.875"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 41.132922,72.334447 c 0,0 2.49775,-5.267079 3.181981,-8.883029 0.68423,-3.61595 0.353553,-9.413359 0.353553,-9.413359"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 45.161782,73.75 c 0,0 1.534894,-3.679847 2.40625,-6.53125 0.871356,-2.851403 1.28125,-7.15625 1.28125,-7.15625"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 48.801947,56.125 c 0,0 0.234502,-1.809418 0.109835,-3.375 -0.124667,-1.565582 -0.5625,-3.1875 -0.5625,-3.1875"
+                  />
+                </g>
+              </svg>
+              <svg
+                class="btn-login__fingerprint btn-login__fingerprint-active"
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+              >
+                <g
+                  class="btn-login__fingerprint-out"
+                  fill="none"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path
+                    class="btn-login__odd"
+                    d="m 25.117139,57.142857 c 0,0 -1.968558,-7.660465 -0.643619,-13.149003 1.324939,-5.488538 4.659682,-8.994751 4.659682,-8.994751"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 31.925369,31.477584 c 0,0 2.153609,-2.934998 9.074971,-5.105078 6.921362,-2.17008 11.799844,-0.618718 11.799844,-0.618718"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 57.131213,26.814448 c 0,0 5.127709,1.731228 9.899495,7.513009 4.771786,5.781781 4.772971,12.109204 4.772971,12.109204"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 72.334009,50.76769 0.09597,2.298098 -0.09597,2.386485"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 27.849282,62.75 c 0,0 1.286086,-1.279223 1.25,-4.25 -0.03609,-2.970777 -1.606117,-7.675266 -0.625,-12.75 0.981117,-5.074734 4.5,-9.5 4.5,-9.5"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 36.224282,33.625 c 0,0 8.821171,-7.174484 19.3125,-2.8125 10.491329,4.361984 11.870558,14.952665 11.870558,14.952665"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 68.349282,49.75 c 0,0 0.500124,3.82939 0.5625,5.8125 0.06238,1.98311 -0.1875,5.9375 -0.1875,5.9375"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 31.099282,65.625 c 0,0 1.764703,-4.224042 2,-7.375 0.235297,-3.150958 -1.943873,-9.276886 0.426777,-15.441942 2.370649,-6.165056 8.073223,-7.933058 8.073223,-7.933058"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 45.849282,33.625 c 0,0 12.805566,-1.968622 17,9.9375 4.194434,11.906122 1.125,24.0625 1.125,24.0625"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 59.099282,70.25 c 0,0 0.870577,-2.956221 1.1875,-4.5625 0.316923,-1.606279 0.5625,-5.0625 0.5625,-5.0625"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 60.901059,56.286612 c 0,0 0.903689,-9.415996 -3.801777,-14.849112 -3.03125,-3.5 -7.329245,-4.723939 -11.867187,-3.8125 -5.523438,1.109375 -7.570313,5.75 -7.570313,5.75"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 34.072577,68.846248 c 0,0 2.274231,-4.165782 2.839205,-9.033748 0.443558,-3.821814 -0.49394,-5.649939 -0.714206,-8.05386 -0.220265,-2.403922 0.21421,-4.63364 0.21421,-4.63364"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 37.774165,70.831845 c 0,0 2.692139,-6.147592 3.223034,-11.251208 0.530895,-5.103616 -2.18372,-7.95562 -0.153491,-13.647655 2.030229,-5.692035 8.108442,-4.538898 8.108442,-4.538898"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 54.391174,71.715729 c 0,0 2.359472,-5.427681 2.519068,-16.175068 0.159595,-10.747388 -4.375223,-12.993087 -4.375223,-12.993087"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 49.474282,73.625 c 0,0 3.730297,-8.451831 3.577665,-16.493718 -0.152632,-8.041887 -0.364805,-11.869326 -4.765165,-11.756282 -4.400364,0.113044 -3.875,4.875 -3.875,4.875"
+                  />
+                  <path
+                    class="btn-login__even"
+                    d="m 41.132922,72.334447 c 0,0 2.49775,-5.267079 3.181981,-8.883029 0.68423,-3.61595 0.353553,-9.413359 0.353553,-9.413359"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 45.161782,73.75 c 0,0 1.534894,-3.679847 2.40625,-6.53125 0.871356,-2.851403 1.28125,-7.15625 1.28125,-7.15625"
+                  />
+                  <path
+                    class="btn-login__odd"
+                    d="m 48.801947,56.125 c 0,0 0.234502,-1.809418 0.109835,-3.375 -0.124667,-1.565582 -0.5625,-3.1875 -0.5625,-3.1875"
+                  />
+                </g>
+              </svg>
+              <svg
+                class="btn-login__ok"
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+              >
+                <path
+                  d="M34.912 50.75l10.89 10.125L67 36.75"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="6"
+                />
+              </svg>
+            </button>
+            <!--Login Button SVG End-->
+
+            <p class="error error__login">Error message</p>
+          </form>
+          <!--Form-->
+        </header>
+        <!--Hero-->
+
+        <!--APP-->
+        <main class="app" id="app">
+          <div class="app__container" id="appContainer">
+            <!--LOGO-->
+            <div class="logo app__logo">
+              <p class="logo__heading">Cashy</p>
+              <img class="logo__pig" src="assets/img/pig.png">
+            </div>
+
+            <!-- GREETINGS -->
+            <div class="greetings app__greetings">
+              <h2 class="greetings__text heading-3">
+                Welcome back
+                <span class="greetings__username display__username">
+                  Kershey!</span
+                >
+              </h2>
+            </div>
+
+            <!-- BALANCE -->
+            <div class="balance app__balance">
+              <div class="balance__text-box">
+                <h2 class="balance__label heading-2 gradient--white-subtle">
+                  Current balance
+                </h2>
+                <p class="balance__date">
+                  As of <span class="current-date">05/03/2022</span>
+                </p>
+              </div>
+              <h1 class="balance__value heading-display">
+                &#8369;0000
+              </h1>
+            </div>
+
+            <!-- MOVEMENTS -->
+            <div class="movements app__movements">
+              <div class="movements__row">
+                <div class="movements__box">
+                  <div class="movements__type movements__type--deposit">
+                    2 deposit
+                  </div>
+                  <div class="movements__date">3 days ago</div>
+                </div>
+                <h3 class="movements__value heading-3">&#8369;4 000</h3>
+              </div>
+
+              <div class="movements__row">
+                <div class="movements__box">
+                  <div class="movements__type movements__type--withdrawal">
+                    1 withdrawal
+                  </div>
+                  <div class="movements__date">24/01/2037</div>
+                </div>
+                <h3 class="movements__value heading-3">-&#8369;378</h3>
+              </div>
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="summary app__summary">
+              <div class="summary__in">
+                <p class="summary__label">In</p>
+                <h2 class="heading-2 summary__value summary__value--in">
+                  &#8369;0000
+                </h2>
+              </div>
+
+              <div class="summary__out">
+                <p class="summary__label">Out</p>
+                <h2 class="heading-2 summary__value summary__value--out">
+                  &#8369;0000
+                </h2>
+              </div>
+
+              <div class="summary__interest">
+                <p class="summary__label">Interest</p>
+                <h2 class="heading-2 summary__value summary__value--interest">
+                  &#8369;0000
+                </h2>
+              </div>
+            </div>
+
+            <!-- OPERATION: TRANSFERS -->
+            <div class="operation operation--transfer app__transfer">
+              <h3 class="operation__type heading-3">Transfer money</h3>
+              <form class="form form--transfer">
+                <div class="form__group">
+                  <input type="text" class="form__input form__input--to" />
+                  <label class="form__label">Recipient username</label>
+                </div>
+                <div class="form__group">
+                  <input
+                    type="number"
+                    class="form__input form__input--amount"
+                  />
+                  <label class="form__label">Amount</label>
+                </div>
+                <p class="error error__transfer">Error message</p>
+                <button class="operation__btn btn-ops form__btn--transfer">
+                  &rarr;
+                </button>
+              </form>
+            </div>
+
+            <!-- OPERATION: LOAN -->
+            <div class="operation operation--loan app__loan">
+              <h3 class="operation__type heading-3">Request loan</h3>
+              <form class="form form--loan">
+                <div class="form__group">
+                  <input
+                    type="number"
+                    class="form__input form__input--loan-amount"
+                  />
+                  <label class="form__label form__label--loan">Amount</label>
+                </div>
+                <p class="error error__loan">Error message</p>
+                <button class="operation__btn btn-ops form__btn--loan">
+                  &rarr;
+                </button>
+              </form>
+            </div>
+
+            <!-- OPERATION: CLOSE -->
+            <div class="operation operation--close app__close">
+              <h3 class="operation__type heading-3">Close account</h3>
+              <form class="form form--close">
+                <div class="form__group">
+                  <input type="text" class="form__input form__input--user" />
+                  <label class="form__label">Confirm username</label>
+                </div>
+                <div class="form__group">
+                  <input
+                    type="password"
+                    maxlength="6"
+                    class="form__input form__input--pin"
+                  />
+                  <label class="form__label">Confirm PIN</label>
+                </div>
+                <p class="error error__close">Error message</p>
+                <button class="operation__btn btn-ops form__btn--close">
+                  &rarr;
+                </button>
+              </form>
+            </div>
+
+            <!-- Misc -->
+            <div class="misc app__misc">
+              <button class="misc__btn-sort btn-sort btn-text--primary">
+                &downarrow; Sort
+              </button>
+              <button class="misc__btn-logout btn-logout btn-ghost">
+                &downarrow; Logout
+              </button>
+            </div>
+
+            <!--Timer-->
+            <p class="logout-timer app__logout-timer">
+              You will be logged out in
+              <span class="timer logout-timer__watch">05:00</span>
+            </p>
+
+            <!--Popup Movement-->
+            <div class="popup popup__movement">
+              <p class="popup-movement__message">
+                Transaction was successful
+                <span class="display__username">Kershey!</span>
+              </p>
+            </div>
+            <!--App Container End-->
+          </div>
+        </main>
+        <!--APP End-->
+
+        <!--Popup Logout-->
+        <div class="popup popup__logout">
+          <p class="popup-logout__message">
+            Thank you for using Cashy
+            <span class="display__username">Kershey!</span>
+          </p>
+        </div>
+
+        <!--Guide-->
+        <details class="guide guide-animation">
+          <summary class="guide__summary">
+            <button class="guide__btn-open btn-open-icon">
+              <svg class="icon guide__icon">
+                <use xlink:href="assets/svg/sprite.svg#icon-key" />
+              </svg>
+            </button>
+          </summary>
+          <h2 class="guide__heading heading-2">Welcome to <span class="guide__brand gradient--secondary-subtle">Cashy</span> Demo<h2>
+          <h3 class="heading-3 guide__subheading">Try and use sample accounts</h3>
+          <div class="guide__content">Sample usernames</div>
+          <button class="btn-close guide__btn-close">
+            <div class="btn-close__left btn-close__line"></div>
+            <div class="btn-close__right btn-close__line"></div>
+            <p class="btn-close__text">Close</p>
+          </button>
+        </details>
+      </div>
+      <!--Home End-->
+
+       <!--Footer-->
+       <footer class="footer">
+        <ul class="footer__nav">
+          <li class="footer__nav--item">
+            <a href="#" class="footer__nav--link">Register</a>
+          </li>
+          <li class="footer__nav--item">
+            <a href="#" class="footer__nav--link">Contact us</a>
+          </li>
+          <li class="footer__nav--item">
+            <a href="#" class="footer__nav--link">Careers</a>
+          </li>
+          <li class="footer__nav--item">
+            <a href="#" class="footer__nav--link">Privacy Policy</a>
+          </li>
+          <li class="footer__nav--item">
+            <a href="#" class="footer__nav--link">Terms</a>
+          </li>
+        </ul>
+        <div class="footer__copyright">
+          <p>Built and designed by Kershey Cari&#241o for demo project only.</p>
+          <p>Disclaimer: I do own websites, but not a bank.</p>
+          <p>&copy; The Mouse 2022</p>
+        </div>
+      </footer>
+      <!--Footer-->
+    </div>
+    <!--Main Container End-->
+  </body>
+</html>

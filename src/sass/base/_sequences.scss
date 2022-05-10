@@ -1,0 +1,65 @@
+@use '../abstracts/breakpoints';
+
+// Login Button
+.btn-login__active {
+  &.btn-login {
+    animation: 6s btn-login;
+  }
+  & .btn-login__text {
+    opacity: 0;
+    animation: 6s btn-login__text forwards;
+  }
+  & .btn-login__fingerprint {
+    opacity: 1;
+    transition: opacity 300ms 200ms;
+  }
+  & .btn-login__fingerprint-base .btn-login__odd {
+    stroke-dasharray: 50px 50px;
+    transition: stroke-dasharray 800ms 100ms;
+  }
+  & .btn-login__fingerprint-base .btn-login__even {
+    stroke-dashoffset: 0px;
+    transition: stroke-dashoffset 800ms;
+  }
+  & .btn-login__fingerprint-active .btn-login__odd {
+    stroke-dasharray: 50px 50px;
+    transition: stroke-dasharray 2000ms 1500ms;
+  }
+  & .btn-login__fingerprint-active .btn-login__even {
+    stroke-dashoffset: 0px;
+    transition: stroke-dashoffset 2000ms 1300ms;
+  }
+  & .btn-login__fingerprint-out {
+    opacity: 0;
+    transition: opacity 300ms 4100ms;
+  }
+  & .btn-login__ok {
+    opacity: 1;
+    animation: 6s btn-login__ok forwards;
+  }
+}
+
+// Hero animation
+.hero-animation {
+  & .card-atm--1 {
+    animation: moveInLeft-card 1s backwards ease-in;
+  }
+  & .card-atm--2 {
+    animation: moveInRight-card 1s backwards ease-in;
+  }
+
+  @include breakpoints.respond(tab-port) {
+    & .hero__logo {
+      animation: moveInBottom 1s backwards ease-in;
+    }
+  }
+}
+
+// Guide animation
+.guide-animation {
+  animation: fade-in 2s backwards ease-out 2s;
+
+  & .guide__btn-open {
+    animation: pulsate--black 1s ease-in 4s 10;
+  }
+}

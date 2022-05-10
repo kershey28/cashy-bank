@@ -1,0 +1,18 @@
+@mixin glass-gradient(
+  $background:
+    linear-gradient(
+      to right bottom,
+      var(--clr-white-opacity-100),
+      var(--clr-white-opacity-100),
+      transparent
+    ),
+  $border: 1px,
+  $blur: 5px
+) {
+  background-image: $background;
+  -webkit-backdrop-filter: blur($blur);
+  backdrop-filter: blur($blur);
+  border-right: $border solid var(--clr-white-opacity-100);
+  border-bottom: $border solid var(--clr-white-opacity-100);
+  @content;
+}

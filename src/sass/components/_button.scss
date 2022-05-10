@@ -1,0 +1,369 @@
+@use '../abstracts/variables';
+
+// Regular Button
+@mixin btn-regular($type) {
+  & {
+    //sizing
+    padding: 1.5rem 2.5rem;
+    width: max-content;
+
+    //typography
+    text-decoration: none;
+    font-size: var(--fs-label);
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+
+    //styling
+    border-radius: 10rem;
+    transition: all 0.2s;
+
+    //reset
+    appearance: none;
+    cursor: pointer;
+
+    //layout
+    display: inline-block;
+    position: relative;
+  }
+
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  @if $type == ghost {
+    background-color: transparent;
+    box-shadow: variables.$shadow-black-light;
+    color: var(--clr-neutral-100);
+    border: 1px solid var(--clr-white-opacity-100);
+
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: variables.$shadow-black-dark;
+    }
+  }
+
+  @content;
+}
+
+.btn-ghost {
+  @include btn-regular(ghost);
+}
+
+// Text Button
+@mixin btn-text($type) {
+  & {
+    //styling
+    background: none;
+    text-transform: uppercase;
+    padding: 3px;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+
+    //misc
+    display: inline-block;
+    transition: all 0.2s;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: variables.$shadow-black-light;
+  }
+
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  @if $type == primary {
+    color: var(--clr-neutral-100);
+  }
+
+  @if $type == neutral {
+    color: var(--clr-primary-300);
+  }
+
+  @content;
+}
+
+.btn-text {
+  &--primary {
+    @include btn-text(primary);
+  }
+
+  &--neutral {
+    @include btn-text(neutral);
+  }
+}
+
+// Operation Button
+@mixin btn-ops() {
+  & {
+    //sizing
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.8rem;
+    padding: 1px;
+
+    //reset
+    appearance: none;
+    cursor: pointer;
+    border: none;
+
+    //styling
+    background-image: linear-gradient(
+      to left bottom,
+      var(--clr-primary-300),
+      var(--clr-primary-100)
+    );
+    color: var(--clr-neutral-100);
+    border-radius: 0.7rem;
+    transition: all 0.3s;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: variables.$shadow-black-light;
+  }
+
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  @content;
+}
+
+.btn-ops {
+  @include btn-ops;
+}
+
+// SVG Login Button
+.btn-login {
+  //styling
+  background-image: linear-gradient(
+    to left bottom,
+    var(--clr-accent-500),
+    var(--clr-accent-400)
+  );
+  box-shadow: variables.$shadow-black-light;
+  border-radius: 10rem;
+  transition: all 0.2s;
+
+  //typography
+  text-decoration: none;
+  font-size: var(--fs-label);
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+
+  //alignment
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // //sizing
+  width: 150px; //200px
+  height: 60px; //80px
+
+  //reset
+  border: 1px solid var(--clr-accent-300);
+  appearance: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: variables.$shadow-black-dark;
+  }
+
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  //Biometric Animation
+  &__text {
+    color: var(--clr-neutral-100);
+    position: absolute;
+    transition: opacity 300ms;
+    user-select: none;
+    -moz-user-select: none;
+  }
+
+  &__fingerprint {
+    /* height: 80px; */
+    left: -19px; //8px
+    opacity: 0;
+    position: absolute;
+    stroke: var(--clr-white-opacity-300);
+    top: -20px; //-9px
+    transition: opacity 1ms;
+  }
+
+  &__fingerprint-active {
+    stroke: var(--clr-primary-300);
+  }
+  &__fingerprint-out {
+    opacity: 1;
+  }
+
+  &__odd {
+    stroke-dasharray: 0px 50px;
+    stroke-dashoffset: 1px;
+    transition: stroke-dasharray 1ms;
+  }
+  &__even {
+    stroke-dasharray: 50px 50px;
+    stroke-dashoffset: -41px;
+    transition: stroke-dashoffset 1ms;
+  }
+  &__ok {
+    opacity: 0;
+  }
+}
+
+//Close Button
+.btn-close {
+  position: relative;
+
+  //sizing
+  width: 40px;
+  height: 40px;
+
+  //reset
+  appearance: none;
+  cursor: pointer;
+
+  //styling
+  background-color: transparent;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__line {
+    //sizing
+    height: 2px;
+    width: 20px;
+
+    //position
+    left: 10px;
+    position: absolute;
+
+    //styling
+    background-color: var(--clr-neutral-200);
+    border-radius: 2px;
+    transition: all 0.3s ease-in;
+  }
+
+  &__left {
+    transform: rotate(45deg);
+  }
+
+  &__right {
+    transform: rotate(-45deg);
+  }
+
+  &__text {
+    //typography
+    color: var(--clr-accent-300);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    //appearance
+    transition: all 0.3s ease-in;
+    opacity: 0;
+
+    //position
+    position: absolute;
+    bottom: -2rem;
+    left: -0.5rem;
+  }
+
+  &:hover &__line,
+  &:focus &__line {
+    background-color: var(--clr-accent-300);
+    outline: none;
+  }
+
+  &:hover &__left,
+  &:focus &__left {
+    transform: rotate(-45deg);
+  }
+
+  &:hover &__right,
+  &:focus &__right {
+    transform: rotate(45deg);
+  }
+
+  &:hover &__text,
+  &:focus &__text {
+    opacity: 1;
+  }
+
+  &:active &__line {
+    background-color: var(--clr-neutral-100);
+  }
+}
+
+// Open Button Icon
+.btn-open-icon {
+  //styling
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover .icon,
+  &:focus .icon {
+    transform: translateY(-2px);
+  }
+
+  &:active .icon {
+    transform: translateY(2px);
+  }
+}

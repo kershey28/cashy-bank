@@ -1,0 +1,44 @@
+@use '../abstracts/breakpoints';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  //children-1
+  &__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    //sizing
+    width: 100%;
+    padding: 0.3rem 1rem;
+
+    //styling
+    background-color: var(--clr-white-opacity-200);
+    color: var(--clr-neutral-800);
+    border: none;
+    border-radius: 0.7rem;
+    transition: all 0.3s;
+
+    //typography
+    font-family: inherit;
+    font-size: 1.5rem;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+      background-color: var(--clr-white-opacity-400);
+    }
+  }
+
+  &__label {
+    text-transform: capitalize;
+    text-align: center;
+    opacity: 0.5;
+  }
+}

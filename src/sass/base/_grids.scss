@@ -1,0 +1,93 @@
+@use '../abstracts/breakpoints';
+@use '../utilities/flow';
+
+// childrens of Main Container
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  @include breakpoints.respond(phone-reg) {
+    align-items: center;
+  }
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      'greet greet'
+      'bal bal'
+      'mov trans'
+      'mov loan'
+      'mov close'
+      'sum misc'
+      'logo timer';
+    gap: 3rem;
+    justify-content: center;
+
+    @include breakpoints.respond(tab-land) {
+      gap: 2rem;
+    }
+
+    @include breakpoints.respond(tab-port) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'greet'
+        'bal'
+        'mov'
+        'mov'
+        'trans'
+        'loan'
+        'close'
+        'sum'
+        'misc'
+        'logo'
+        'timer';
+      gap: 3rem;
+    }
+  }
+}
+
+// children of APP
+.balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  @include breakpoints.respond(tab-port) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoints.respond(phone-reg) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.form {
+  @include breakpoints.respond(phone-reg) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.misc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

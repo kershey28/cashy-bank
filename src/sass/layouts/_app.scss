@@ -1,0 +1,65 @@
+@use '../abstracts/breakpoints';
+
+.app {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+
+  //TEST
+  // height: 100%;
+
+  @include breakpoints.respond(tab-port) {
+    height: auto;
+  }
+
+  &__container {
+    width: 80%;
+    height: 0;
+
+    @include breakpoints.respond(phone-reg) {
+      width: 100%;
+    }
+
+    //TEST
+    // height: auto;
+  }
+
+  &__greetings {
+    grid-area: greet;
+  }
+  &__balance {
+    grid-area: bal;
+  }
+
+  &__movements {
+    grid-area: mov;
+  }
+
+  &__summary {
+    grid-area: sum;
+  }
+
+  &__transfer {
+    grid-area: trans;
+  }
+
+  &__loan {
+    grid-area: loan;
+  }
+
+  &__close {
+    grid-area: close;
+  }
+
+  &__misc {
+    grid-area: misc;
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__logout-timer {
+    grid-area: timer;
+  }
+}
