@@ -31,6 +31,11 @@
     text-align: center;
     height: 2rem;
     width: 2rem;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
 
     &:focus {
       outline: none;
