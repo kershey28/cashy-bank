@@ -26,7 +26,7 @@ const account1 = {
 
 const account2 = {
   owner: 'Joseph Carino',
-  movements: [3500, 5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  movements: [55500, 82000, -15400, -1500, 11790, -30210, -1000, 32500, -3000],
   interestRate: 1.5,
   pin: 2222,
 
@@ -35,11 +35,11 @@ const account2 = {
     '2019-11-30T09:48:16.867Z',
     '2019-12-25T06:04:23.907Z',
     '2020-01-25T14:18:46.235Z',
-    '2020-05-05T16:33:06.386Z',
-    '2022-05-07T14:43:26.374Z',
-    '2022-05-08T18:49:59.371Z',
-    '2022-05-09T12:01:20.894Z',
-    '2022-05-10T12:03:20.894Z',
+    '2020-05-15T16:33:06.386Z',
+    '2022-05-17T14:43:26.374Z',
+    '2022-05-18T18:49:59.371Z',
+    '2022-05-19T12:01:20.894Z',
+    '2022-05-19T12:03:20.894Z',
   ],
   currency: 'PHP',
   locale: 'en-US',
@@ -47,7 +47,7 @@ const account2 = {
 
 const account3 = {
   owner: 'Marian Villaruel',
-  movements: [20011, 10000, 5400, -250, -8890, 8500, -30, 5000, 30000],
+  movements: [20011, 10000, 90400, -2500, -8890, 8500, -3000, 50000, 30000],
   interestRate: 1.1,
   pin: 3333,
 
@@ -60,7 +60,7 @@ const account3 = {
     '2022-05-07T13:05:17.194Z',
     '2022-05-08T21:58:17.929Z',
     '2022-05-09T10:51:36.790Z',
-    '2022-05-10T12:06:20.894Z',
+    '2022-05-19T12:06:20.894Z',
   ],
   currency: 'PHP',
   locale: 'en-US',
@@ -68,7 +68,7 @@ const account3 = {
 
 const account4 = {
   owner: 'Giannelle Villaruel',
-  movements: [33020, 20000, 400, -250, -8890, -7210, -10000, 8500, 80000],
+  movements: [83002, 230000, 80400, -2500, -8890, -7210, -10000, 85000, 85000],
   interestRate: 0.9,
   pin: 4444,
 
@@ -304,11 +304,15 @@ const calcMaxValue = movements => {
   return max;
 };
 
-//////// Scroll into movements in Tab-port View////////
-const scrollIntoMovements = () => {
-  if (portMediaQuery.matches) {
-    labelBalance.scrollIntoView({ behavior: 'smooth' });
-  }
+const scrollIntoPosition = position => {
+  let coord;
+
+  if (position === 'movements' && portMediaQuery.matches) coord = 100;
+
+  window.scrollTo({
+    top: coord,
+    behavior: 'smooth',
+  });
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -501,6 +505,10 @@ btnTransfer.addEventListener('click', function (e) {
     receiverAccount?.username !== currentAccount.username &&
     receiverAccount
   ) {
+    // Blur Input
+    inputTransferTo.blur();
+    inputTransferAmount.blur();
+
     // Doing the transfer
     currentAccount.movements.push(-amount);
     receiverAccount.movements.push(amount);
@@ -513,7 +521,7 @@ btnTransfer.addEventListener('click', function (e) {
     updateUI();
 
     // Scroll into movements in tab-port view
-    scrollIntoMovements();
+    scrollIntoPosition('movements');
 
     // Popup Message
     displayPopup('Transferred successfully,', popupMovement);
@@ -536,6 +544,10 @@ btnClose.addEventListener('click', function (e) {
     currentAccount.username === inputCloseUsername.value &&
     currentAccount.pin === +inputClosePin.value
   ) {
+    // Blur Input
+    inputCloseUsername.blur();
+    inputClosePin.blur();
+
     //delete the account
     accounts.splice(closeAccIndex, 1);
 
@@ -561,11 +573,11 @@ btnLoan.addEventListener('click', function (e) {
     currentAccount.movements.push(loanAmount);
     currentAccount.movementsDates.push(new Date());
 
-    //update UI
+    // update UI
     updateUI();
 
     // Scroll into Movements
-    scrollIntoMovements();
+    scrollIntoPosition('movements');
 
     // Popup Message
     displayPopup('Loan was granted successfully,', popupMovement);
@@ -576,6 +588,9 @@ btnLoan.addEventListener('click', function (e) {
     loanAmount > 0 &&
     currentAccount.movements.some(mov => mov >= 0.1 * loanAmount)
   ) {
+    // Blur Input
+    inputLoanAmount.blur();
+
     // 3 Seconds Delay
     setTimeout(grantLoan, 3000);
   } else renderError('Invalid request!', errorLoan);
@@ -595,7 +610,7 @@ btnSort.addEventListener('click', function (e) {
   sorted = !sorted;
 
   // Scroll into movements in tab-port view
-  scrollIntoMovements();
+  scrollIntoPosition('movements');
 });
 
 /***************************** Popups ***************************************/

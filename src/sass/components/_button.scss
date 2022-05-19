@@ -4,7 +4,7 @@
 @mixin btn-regular($type) {
   & {
     //sizing
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 3rem;
     width: max-content;
 
     //typography
@@ -177,7 +177,7 @@
     var(--clr-accent-400)
   );
   box-shadow: variables.$shadow-black-light;
-  border-radius: 10rem;
+  border-radius: 5px; //10rem
   transition: all 0.2s;
 
   //typography
@@ -194,7 +194,7 @@
   align-items: center;
 
   // //sizing
-  width: 150px; //200px
+  width: 190px; //150px
   height: 60px; //80px
 
   //reset

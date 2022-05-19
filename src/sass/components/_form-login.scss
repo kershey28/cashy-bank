@@ -30,25 +30,7 @@
 
   //children-1
   &__heading {
-    //position
-    position: absolute;
-    display: inline-block;
-    top: -3.5rem;
-    left: 9.5rem;
-
-    //styling
-    @include mixins.glass-gradient;
-
-    //others
-    padding: 1.5rem 3rem;
-    font-size: var(--fs-body);
-
-    @include breakpoints.respond(phone-reg) {
-      position: relative;
-      bottom: 3rem;
-      left: auto;
-      padding: 1rem 1.5rem;
-    }
+    margin-bottom: flow.$margin-md;
   }
 
   &__input {

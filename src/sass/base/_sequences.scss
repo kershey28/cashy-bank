@@ -62,4 +62,8 @@
   & .guide__btn-open {
     animation: pulsate--black 1s ease-in 4s 10;
   }
+
+  & .guide__icon {
+    animation: switching-svg-colors 1s ease-in 4s 10;
+  }
 }
